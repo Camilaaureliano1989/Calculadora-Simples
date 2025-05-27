@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input {
+      width: 100px;
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculadora Simples</h1>
+
+  <input type="number" id="num1" placeholder="Número 1">
+  <input type="number" id="num2" placeholder="Número 2"><br>
+
+  <button onclick="calcular('+')">+</button>
+  <button onclick="calcular('-')">-</button>
+  <button onclick="calcular('*')">×</button>
+  <button onclick="calcular('/')">÷</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcular(operador) {
+      const n1 = parseFloat(document.getElementById("num1").value);
+      const n2 = parseFloat(document.getElementById("num2").value);
+      let resultado = 0;
+
+      if (operador === '+') resultado = n1 + n2;
+      if (operador === '-') resultado = n1 - n2;
+      if (operador === '*') resultado = n1 * n2;
+      if (operador === '/') resultado = n1 / n2;
+
+      document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+  </script>
+</body>
+</html>
